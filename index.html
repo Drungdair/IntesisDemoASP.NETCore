@@ -48,8 +48,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <li><a class="dropdown-item" href="./mgeneral.html">Generales</a></li>
-                <li><a class="dropdown-item" href="./msimulated.html">Simulated Annealing</a></li>
-                <li><a class="dropdown-item" href="./mgeneticos.html">Algoritmos Genéticos</a></li>
+                <li><a class="dropdown-item" href="./malgoritmos.html">Algoritmos</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -59,7 +58,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <li><a class="dropdown-item" href="./vendedorviajero.html">Problema del Vendedor Viajero</a></li>
                 <li><a class="dropdown-item" href="./metaheuristicas.html">Metaheurísticas</a></li>
-                <li><a class="dropdown-item" href="./simulatedannealign.html">Simulated Annealing</a></li>
+                <li><a class="dropdown-item" href="./simulatedannealing.html">Simulated Annealing</a></li>
                 <li><a class="dropdown-item" href="./algoritmogenetico.html">Algoritmos Genéticos</a></li>
               </ul>
             </li>
@@ -77,278 +76,71 @@
         <div class="row">
             <div class="mt-5 col-md-10 offset-md-1" style="background-color: rgba(207, 207, 207, 0.925);">
                 <h1 class="mt-4 d-flex justify-content-center">TSP Framework</h1>
-                <p></p>
-                <div class="col-5">
-                  <h2 class="d-flex justify-content-center">Problema del Vendedor Viajero</h2>
-                </div>
                 <div class="col-md-10 offset-md-1">
                   <p>
-                    El problema del vendedor viajero o TSP está enfocado en encontrar la ruta más corta en
-                    un entre un conjunto de ciudades que deben ser visitadas solo una vez. Al final de la ruta se debe
-                    volver a la ciudad por la que se partió. Todas estas ciudades deben ser visitadas por un vendedor
-                    el cual debe mantener los costos y/o las distancias viajadas lo más bajo posible, esto implica que
-                    es un problema de minimización.
+                    El problema del vendedor viajero (TSP) es un problema de optimización en el que se debe
+                    encontrar una ruta óptima que visite un conjunto de ubicaciones o ciudades para luego volver al
+                    punto de partida. Esta ruta debe minimizar los costos o la distancia recorrida.
                   </p>
                   <p>
-                    Enfocado en la optimización, este problema se usa para encontrar la ruta más eficiente
-                    para viajar entre varios nodos. Fue descrito por primera vez por el matemático irlandés <a href="https://es.wikipedia.org/wiki/William_Rowan_Hamilton">W.R. Hamilton</a> 
-                    y el matemático británico <a href="https://es.wikipedia.org/wiki/Thomas_Kirkman">Thomas Kirkman</a> en la década de 1800 a través de la
-                    creación de un juego que se podía resolver al encontrar un <a href="https://es.wikipedia.org/wiki/Camino_hamiltoniano">circuito de Hamilton</a>, que es un
-                    camino compuesto por distintos nodos donde deben recorrerse todos sin superponerse, y el
-                    primer y último nodo deben estar conectados.
-                  </p>
-                  <p>
-                    TSP se ha estudiado durante décadas y se han teorizado varias soluciones, siendo la más
-                    simple la de probar todas las posibilidades, pero también es la más lenta y costosa. Es por esto
-                    por lo que se utilizan metaheurísticas, pero estas entregan soluciones aproximadas y no siempre
-                    óptimas.
-                  </p>
-                  <p>
-                    Para terminar de comprender el TSP de forma práctica, se tiene la siguiente figura, donde
-                    se tienen varios nodos representando los puntos que se deben recorrer los cuales están
-                    conectados entre sí con sus respectivas distancias.
-                  </p>
-                  <img src="images/Grafico TSP.jpg" alt="Ejemplo grafico de TSP" class="rounded mx-auto d-block img-thumbnail">
-                  <p></p>
-                  <p>
-                    Notemos que si se define una ruta 1: {A, B, C, D, E, A}, la distancia sería de 21, y si se
-                    define una ruta 2: {A, B, C, E, D, A}, la distancia sería de 35, por lo que la ruta 1 resulta mejor
-                    y sería una mejor solución para TSP.
+                    El software TSP-Framework tiene como enfoque el solucionar instancias de este tipo de problema 
+                    gracias al uso de las metaheurísticas de Simulated Annealing y Algoritmos Genéticos. 
                   </p>
                 </div>
-                <hr/>
-                <p></p>
-                <div class="col-4">
-                  <h2 class="d-flex offset-md-1">Metaheurísticas</h2>
+                <h5 class="mt-4 d-flex justify-content-center">Demo Simulated Annealing</h5>
+                <div class="d-flex justify-content-center">
+                  <video width="960" height="520" controls>
+                    <source src="./images/Demo.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                  </video>
                 </div>
-                <div class="col-md-10 offset-md-1">
-                  <p>
-                    Con el fin de comprender el concepto de metaheurística, se debe entender el término de
-                    heurística. Conceptualmente, la heurística está relacionada con la capacidad de solucionar
-                    inteligentemente problemas reales usando el conocimiento disponible.
+                <div class="col-10">
+                  <p class="d-flex justify-content-end" style="font-size: medium;">
+                    <samp>Esquema enfriamiento lineal α = 0.98</samp>
                   </p>
-                  <p>
-                    A nivel práctico, las heurísticas son técnicas de resolución de problemas, las cuales se
-                    conforman por reglas metodológicas con el fin de encontrar la solución que más se acerque al
-                    resultado óptimo de un problema en específico, manteniendo un costo de cómputo razonable.
-                  </p>
-                  <p>
-                    Sin embargo, estos resultados no garantizan una solución que sea factible, por tanto, no se
-                    puede determinar qué tan próximo se encuentran a la solución óptima. Además, que la técnica
-                    desarrollada para solucionar el problema solo es válida para este, siendo necesario generar otros
-                    métodos que satisfagan diversos tipos de problemas.
-                  </p>
-                  <p>
-                    Es en estos escenarios, que existe otra técnica de solución de problemas, las denominadas
-                    metaheurísticas, las cuales son estrategias generales para aplicar una o más heurísticas, y que
-                    permiten solucionar problemas de forma general, es decir, que una misma metaheurística tiene
-                    la capacidad de encontrar soluciones factibles a diferentes problemáticas. De allí el significado
-                    de su nombre, pues meta significa “más allá” o “nivel superior”, haciendo referencia de la
-                    capacidad de abarcar mayor número de problemas en contraparte de las heurísticas.
-                  </p>
-                  <p>
-                    Para lograr esta característica de generalidad, las metaheurísticas generan soluciones
-                    usando el concepto de exploración y explotación del espacio de búsqueda, evitando así el
-                    estancamiento en los óptimos locales (en un área acotada del total de soluciones posibles).
-                  </p>
-                  <p>
-                    Cuando se habla de exploración del espacio de búsqueda, se hace referencia a la
-                    indagación de soluciones en toda el área de búsqueda, permitiendo encontrar sectores
-                    prometedores de mejores soluciones. En el caso de la explotación, se enfoca en intensificar uno
-                    de estos sectores prometedores, buscando el óptimo local.
-                  </p>
-                  <p>
-                    El enfoque del software se centra en el desarrollo de dos metaheurísticas con el fin de
-                    solucionar el problema del vendedor viajero, las cuales se basan en las estrategias de búsqueda
-                    trayectoria y poblacional.
-                  </p>
-                  <ul>
-                    <li>
-                      <b>Trayectoria:</b> método de búsqueda global, en donde se maneja una sola solución
-                      del espacio de búsqueda en cada iteración (solución actual), aplicando heurísticas
-                      perturbativas para encontrar la siguiente solución, generando una trayectoria de
-                      soluciones, un ejemplo de ello es el Simulated Annealing.
-                      <p></p>
-                      <img src="images/Trayectoria.png" alt="Estrategia de busqueda trayectoria" class="rounded mx-auto d-block img-thumbnail">
-                      <p></p>
-                    </li>
-                    <li>
-                      <b>Poblacional:</b> método de búsqueda global, en donde se analiza un conjunto de
-                      soluciones del espacio de búsqueda en cada iteración, las cuales son modificadas
-                      y refinadas en cada repetición del algoritmo, un ejemplo de ello es el Algoritmo
-                      Genético.
-                      <p></p>
-                      <img src="images/Poblacional.png" alt="Estrategia de busqueda poblacional" class="rounded mx-auto d-block img-thumbnail">
-                      <p></p>
-                    </li>
-                  </ul>
                 </div>
-                <hr/>
-                <p></p>
-                <div class="col-4">
-                  <h2 class="d-flex justify-content-center">Simulated Annealing</h2>
-                </div>
-                <div class="col-md-10 offset-md-1">
-                  <p>
-                    El concepto del Recocido Simulado (Simulated Annealing) fue introducido a inicios de
-                    los años 80 por <a href="https://en.wikipedia.org/wiki/Donald_Kirkpatrick">Kirkpatric</a> y <a href="https://scholar.google.com/citations?user=S05us9gAAAAJ&hl=en">Vecchi</a>, el cual fue inspirado en el proceso físico de enfriamiento
-                    de metales con el fin de llegar al equilibrio térmico, durante este tratamiento se logra alterar las
-                    propiedades físicas de los materiales al calentarse a altas temperatura y luego enfriarlos de
-                    manera controlada.
-                  </p>
-                  <p>
-                    La metaheurística es de tipo trayectoria, teniendo como característica evitar el
-                    estancamiento de soluciones a nivel local, esto se logra mediante la aplicación de un criterio de
-                    aceptación denominado criterio de metrópolis, el cual permite la aceptación de una solución no
-                    necesariamente mejor a la actual, aumentando de esta forma el espacio de búsqueda. Para aplicar
-                    Simulated Annealing es necesario definir un movimiento (heurística perturbativa) que permitirá
-                    generar soluciones a partir de otras.
-                  </p>
-                  <div class="col-2">
-                    <h4 class="d-flex justify-content-start">Pseudocódigo</h4>
+                <div class="col-md-10 offset-md-1 mt-5">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="card" style="width: 18rem; background-color:rgb(74, 74, 75); color:aliceblue">
+                        <div class="card-body">
+                          <h5 class="card-title">Instalación Python <img src="./images/Python.png" alt="" style="width:25px;height:25px"></h5>
+                          
+                          <p class="card-text">Para usar el framework de manera local, es necesario instalar Python en su equipo.</p>
+                          <h6 class="card-subtitle mb-2" style="color: rgb(202, 205, 207);"><b>Seleccione SO</b></h6>
+                          <div class="d-flex justify-content-center">
+                            <a href="https://www.python.org/downloads/windows/" class="card-link"><img src="./images/Windows.png" alt="Python Windows" style="width:60px;height:60px"></a>
+                            <a href="https://www.python.org/downloads/source/" class="card-link"><img src="./images/Linux.png" alt="Python Linux" style="width:60px;height:60px"></a>
+                            <a href="https://www.python.org/downloads/macos/" class="card-link"><img src="./images/macOS.png" alt="Python macOS" style="width:60px;height:60px"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card" style="width: 18rem; background-color:rgb(74, 74, 75); color:aliceblue">
+                        <div class="card-body">
+                          <h5 class="card-title">Instancias</h5>
+                          <p class="card-text">Pruebe a descargar instancias en formato TSP para ejecutar este framework</p>
+                          <h6 class="card-subtitle mb-2" style="color: rgb(202, 205, 207);">Universidad de Heidelberg</h6>
+                          <div class="d-flex justify-content-center">
+                            <a href="http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp/" class="card-link"><img src="./images/Descarga.png" alt="Boton Lista Descargar" style="width:60px;height:60px"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card" style="width: 18rem; background-color:rgb(74, 74, 75); color:aliceblue">
+                        <div class="card-body">
+                          <h5 class="card-title">Online</h5>
+                          <p class="card-text">Ejecute el framework sin la necesidad de descargarlo, gracias a la virtualizacion de SO</p>
+                          <h6 class="card-subtitle mb-2" style="color: rgb(202, 205, 207);">Replit</h6>
+                          <div class="d-flex justify-content-center">
+                            <a href="replit.html" class="card-link"><img src="./images/Replit.png" alt="Boton Lista Descargar" style="width:60px;height:60px"></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <p>El procedimiento de ejecución del algoritmo se rige por las siguientes operaciones:</p>
-                  <ol>
-                    <li>
-                      El proceso comienza con la generación de una solución inicial, el cual será el punto de
-                      inicio y comparación con la siguiente solución generada.
-                    </li>
-                    <li>
-                      La solución actual, representada por la variable (s), al principio será la solución inicial,
-                      de igual forma conlleva la implicación que será la mejor solución encontrada (s*).
-                      Además, se define la variable temperatura, la cual idealmente tendrá un valor alto,
-                      simulando la temperatura máxima que alcanza un metal (t).
-                    </li>
-                    <li>
-                      En cada iteración, se realiza un movimiento aleatorio con el fin de encontrar un vecino
-                      de la solución actual, declarado como (s').
-                    </li>
-                    <li>
-                      En este punto se pueden generar dos situaciones al comparar la solución actual y el
-                      vecino generado:
-                      <ol type="a">
-                        <li>
-                          Si el nuevo vecino generado (s'), presenta un mejor valor en comparación a la
-                          solución actual (s), el vecino se convertirá en la nueva solución actual.
-                        </li>
-                        <li>
-                          Si el vecino (s') no presenta un mejor valor respecto a la solución actual (s), se
-                          aplica el criterio de metrópoli:
-                          <ol type="i">
-                            <li>
-                              Si se acepta el criterio, la solución actual será determinada por el vecino
-                              generado.
-                            </li>
-                            <li>
-                              Si se rechaza, se descarta el vecino generado.
-                            </li>
-                          </ol>
-                        </li>
-                      </ol>
-                    </li>
-                    <li>
-                      En caso de que la solución actual (s) tenga un valor óptimo al compararlo con la mejor
-                      solución (s*), el valor de este último será reemplazado por el primero.
-                    </li>
-                    <li>
-                      Al finalizar la iteración, la temperatura disminuirá dependiendo el esquema de
-                      enfriamiento seleccionado.
-                    </li>
-                    <li>
-                      En caso de cumplir el criterio de término del algoritmo, se retornará la mejor solución
-                      (s*), en caso contrario se repite el proceso a partir del paso 3.
-                    </li>
-                  </ol>
-                  <p>Con el fin de facilitar la comprensión del algoritmo, se presenta un diagrama de flujo:</p>
-                  <img src="images/SimulatedAnnealing.png" alt="Diagrama de flujo Simulated Annealing" class="rounded mx-auto d-block img-thumbnail">
-                </div>
-                <hr/>
-                <p></p>
-                <div class="col-4">
-                  <h2 class="d-flex justify-content-center">Algoritmos Genéticos</h2>
-                </div>
-                <div class="col-md-10 offset-md-1">
-                  <p>
-                    El algoritmo genético es una metaheurística de población, conceptualmente se basa en el
-                    principio de evolución de los seres vivos, planteado por <a href="https://es.wikipedia.org/wiki/Charles_Darwin">Darwin</a> en 1859. En este, se indica que
-                    los seres vivos tienen la necesidad de reproducirse, con el fin de generar descendencia, es en
-                    este punto en donde se genera una competencia entre los individuos de una misma especie, ya
-                    que un espécimen fuerte tiene una alta capacidad de sobrevivencia en comparación a sus pares,
-                    presentando una mayor probabilidad de generar descendientes. Esto implica que los genes de
-                    los mejores sujetos se propagarán en sucesivas generaciones, provocando de esta manera,
-                    mutaciones que originan la evolución en nuevas generaciones, teniendo esta mayor capacidad
-                    de sobrevivencia que sus antecesores. De igual forma que sus antecesores, las nuevas
-                    generaciones volverán a reproducirse y seguirán creándose evoluciones que permitan adaptarse
-                    al ambiente que habitan.
-                  </p>
-                  <p>
-                    En 1975 <a href="https://es.wikipedia.org/wiki/John_L._Holland">John Holland</a> crea los principios básicos del algoritmo genético, el cual es una
-                    analogía directa al principio de evolución de Darwin, en donde las soluciones encontradas en el
-                    problema del vendedor viajero son individuos. Ya que esta metaheurística es de tipo
-                    poblacional, la forma de evaluar cada iteración (generación) es a partir de un conjunto de
-                    soluciones, el cual es llamando población. En cada generación, se realizan cruzamientos entre
-                    padres para generar nuevos hijos, además de aplicar un factor de mutación que permite explorar
-                    el espacio de búsqueda. Por último, se seleccionan los mejores hijos y/o padres para generar una
-                    nueva población.
-                  </p>
-                  <div class="col-2">
-                    <h4 class="d-flex justify-content-start">Pseudocódigo</h4>
-                  </div>
-                  <p>
-                    Con el fin de realizar el proceso de selección de la mejor solución con algoritmo genético,
-                    se necesitan llevar a cabo los siguientes pasos:
-                  </p>
-                  <ol>
-                    <li>
-                      Se inicia el algoritmo generando una población inicial, la cual también será nuestra
-                      población actual (G), para ello se debe determinar la cantidad de soluciones que conforman la
-                      población. Cada solución es creada a partir de los mismos métodos de generación de solución
-                      inicial de Simulated Annealing: aleatoria, vecino más cercano o determinista.
-                    </li>
-                    <li>
-                      La mejor solución encontrada (s*), en un comienzo estará determinada por la
-                      mejor solución dentro de la población inicial.
-                    </li>
-                    <li>
-                      Al iniciar una iteración o generación se seleccionan dos o más padres (P) de la
-                      población.
-                    </li>
-                    <li>
-                      Los padres escogidos crearán nuevos hijos (s), para ello pasan por un proceso
-                      llamado recombinación, en donde los padres combinan los componentes de sus
-                      cromosomas (posición de las ciudades).
-                    </li>
-                    <li>
-                      Una vez generado los hijos, estos pasan por una pequeña modificación generando
-                      una solución alterada, este procedimiento es llamado mutación. La probabilidad
-                      de que ocurra esta mutación es pequeña, existen varios tipos de mutación de
-                      solución.
-                    </li>
-                    <li>
-                      En este punto, si la cantidad de hijos generados no son suficientes para construir
-                      una nueva población (G*), se vuelve al paso 3 volviendo a generar otros hijos
-                      adicionales.
-                    </li>
-                    <li>
-                      Ya creada la nueva población (G*), esta se compara con la población actual (G),
-                      en donde los individuos de ambas poblaciones son elegidos para sustituir la
-                      generación actual con el fin de pertenecer a la próxima iteración del algoritmo.
-                    </li>
-                    <li>
-                      Se selecciona el mejor hijo (solución) dentro de la nueva población actual, y se
-                      compara con la mejor solución encontrada (s*), en caso de ser mejor la solución
-                      generada, esta pasa a ser la mejor solución encontrada.
-                    </li>
-                    <li>
-                      En caso de cumplir el criterio de término, se retorna la mejor solución encontrada.
-                      De manera contraria, se vuelve a ejecutar el procedimiento desde el paso 3.
-                    </li>
-                  </ol>
-                  <p>
-                    Para facilitar el proceso de compresión del algoritmo, se ha diseñado un diagrama de
-                    flujo, que muestra gráficamente la ejecución de este:
-                  </p>
-                  <img src="images/AlgoritmoGenetico.png" alt="Diagrama de flujo Simulated Annealing" class="rounded mx-auto d-block img-thumbnail">
                 </div>
                 <hr/>
             </div>
